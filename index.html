@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Budget App</title>
+    <link rel="shortcut icon" href="./budget.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./app.js" defer></script>
+    <script src="./bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Budget App</h1>
+            <div class="row">
+                <div class="col">
+                    <!-- Budget set -->
+                    <div class="budget-div">
+                        <h3 class="spacing">Budget</h3>
+                        <hr>
+                        <p class="hide error" id="budget-error">
+                            value can not be empty or negative
+                        </p>
+                        <div class="input-group flex-nowrap spacing">
+                            <input type="text" class="form-control" placeholder="Enter Total Amount"
+                                aria-label="Username" aria-describedby="addon-wrapping" id="total-amount">
+                        </div>
+                        <button type="button" class="btn btn-primary spacing submit" id="total-amount-button">Set
+                            Budget</button>
+                    </div>
+                    <!-- Expenses set -->
+                    <div class="budget-div">
+                        <h3 class="spacing">Expenses</h3>
+                        <hr>
+                        <p class="hide error" id="product-title-error">
+                            value can not be empty
+                        </p>
+                        <select class="product-title" id="product-title" aria-placeholder="Select">
+                            <option value="Select" disabled selected>Select</option>
+                            <option value="Restaurants & Cafe">Restaurants & Cafe</option>
+                            <option value="Clothes & Shopping">Clothes & Shopping</option>
+                            <option value="Credits & loans">Credits & loans</option>
+                            <option value="Gifts Card">Gifts Card</option>
+                        </select>
+                        <div class="input-group flex-nowrap spacing">
+                            <input type="number" class="form-control" id="user-amount"
+                                placeholder="Enter cost of Product" aria-label="Username"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                        <div class="input-group flex-nowrap spacing">
+                            <input type="date" class="form-control" id="input-date" aria-label="Username"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                        <button type="button" class="btn btn-primary spacing submit" id="check-amount">Check
+                            Amount</button>
+                    </div>
+                </div>
+                <!-- Output -->
+                <div class="col-lg-6">
+                    <div class="output-container flex-space bg-primary">
+                        <div>
+                            <p>Totat Badget</p>
+                            <hr>
+                            <span id="amount">0</span>
+                        </div>
+                        <div>
+                            <p>Expenses</p>
+                            <hr>
+                            <span id="expenditure-value">0</span>
+                        </div>
+                        <div>
+                            <p>Balance</p>
+                            <hr>
+                            <span id="balance-amount">0</span>
+                        </div>
+                    </div>
+                    <!-- List -->
+                    <div class="list">
+                        <h3>Expense List</h3>
+                        <hr>
+                        <div class="list-container" id="list"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="budget-div categories">
+                        <h4 class="spacing">Add New Categories</h4>
+                        <hr>
+                        <p class="hide error" id="category-error">
+                            value can not be empty or negative
+                        </p>
+                        <div class="input-group flex-nowrap spacing">
+                            <input type="text" class="form-control" id="add-category" placeholder="Enter Categories" aria-label="Username"
+                                aria-describedby="addon-wrapping">
+                        </div>
+                        <button type="button" class="btn btn-primary spacing" id="btn-category">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
