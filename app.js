@@ -40,22 +40,25 @@ checkAmountButton.addEventListener("click", () => {
         productTitleError.classList.remove("hide");
         return false;
     }
-    // Enable buttons:
-    disableButton(false);
-    // Expense:
-    let expenditure = parseInt(userAmount.value);
-    // Total expense (existing + new)
-    let sum = parseInt(expenditureValue.innerText) + expenditure;
-    expenditureValue.innerText = sum;
-    // Total Balance (budget - total expense)
-    const totalBalance = tempAmount - sum;
-    balanceValue.innerText = totalBalance;
-    // Create list
-    listCreator(productTitle.value, userAmount.value, date.value);
-    // Empty inputs:
-    productTitle.value = "Select";
-    userAmount.value = "";
-    date.value = "";
+    else {
+        productTitleError.classList.add("hide");
+        // Enable buttons:
+        disableButton(false);
+        // Expense:
+        let expenditure = parseInt(userAmount.value);
+        // Total expense (existing + new)
+        let sum = parseInt(expenditureValue.innerText) + expenditure;
+        expenditureValue.innerText = sum;
+        // Total Balance (budget - total expense)
+        const totalBalance = tempAmount - sum;
+        balanceValue.innerText = totalBalance;
+        // Create list
+        listCreator(productTitle.value, userAmount.value, date.value);
+        // Empty inputs:
+        productTitle.value = "Select";
+        userAmount.value = "";
+        date.value = "";
+    }
 })
 
 // fucntion to disable edit and delete buttons:
@@ -70,7 +73,6 @@ const disableButton = (bool) => {
 // function to create list:
 
 const listCreator = (expenceName, expenceValue, expenceDate) => {
-    // console.log(expenceDate.format("yy-mm-dd"));
     let sublistContent = document.createElement("div");
     let sublistContent2 = document.createElement("div");
     sublistContent.classList.add("sublist-content", "flex-space");
